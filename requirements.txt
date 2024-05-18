@@ -21,3 +21,5 @@ aiofiles
 pytz
 umongo
 speedtest-cli
+beautifulsoup4
+bs4
