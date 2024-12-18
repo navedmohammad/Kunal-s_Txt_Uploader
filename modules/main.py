@@ -21,9 +21,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from bs4 import BeautifulSoup
 
 bot = Client("bot",
-             bot_token= "7018437002:AAG6WuPCt4Hb9VmPG5PmP0kusK3hyaMitJg", 
-             api_id= 27994649,
-             api_hash= "a667f9bf86b1e9af6ee9862fee3001e4")
+             bot_token= "7889980989:AAG8-dIdMvPbbyK3Z_cy1-tOh5MenfZVd-M", 
+             api_id= 27416678,
+             api_hash= "617ba8c82f25e3143fe44881bb6f36b1")
 
 
 #----------CONVERTOR-------------
@@ -58,7 +58,7 @@ async def run_bot(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello, **KUNAL**! 🌟\n\n I am your friendly bot 🤖, here to help you download links from your **.txt** file and upload them to Telegram. To get started, simply send me the /kunal command and follow a few easy steps.")
+    editable = await m.reply_text("Hello, **Shivam**! 🌟\n\n I am your friendly bot 🤖, here to help you download links from your **.txt** file and upload them to Telegram. To get started, simply send me the /shivam command and follow a few easy steps.")
 
 
 @bot.on_message(filters.command("stop"))
@@ -69,7 +69,7 @@ async def restart_handler(_, m):
 
 #-------------TXT Uploader Commands ---------------
 
-@bot.on_message(filters.command(["kunal"]))
+@bot.on_message(filters.command(["shivam"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hey Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -78,7 +78,7 @@ async def account_login(bot: Client, m: Message):
         await bot.send_document(-1002104716327, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
-        credit = f"KUNAL❤️"
+        credit = f"shivam❤️"
 
         path = f"./downloads/{m.chat.id}"
 
@@ -142,7 +142,7 @@ async def account_login(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     if raw_text3 == 'df':
-        CR = "KUNAL❤️"
+        CR = "shivam❤️"
     else:
         CR = raw_text3
     await editable.edit("Now send the **Thumb url**\nEg : **`https://telegra.ph/file/df5f23cd48e6043828e0e.jpg`**\n\nor Send `no`")
@@ -163,7 +163,7 @@ async def account_login(bot: Client, m: Message):
         count = int(raw_text)
 
     try:
-        await bot.send_message(-1002104716327, f"**•File name** - `{file_name}`({raw_text0})\n**•Total Links Found In TXT** - `{len(links)}`\n**•Starts from** - `{raw_text}`\n**•Resolution** - `{res}`({raw_text2})\n**•Caption** - `{raw_text3}`\n**•Thumbnail** - `{thumb}`")
+        await bot.send_message(-2194644711, f"**•File name** - `{file_name}`({raw_text0})\n**•Total Links Found In TXT** - `{len(links)}`\n**•Starts from** - `{raw_text}`\n**•Resolution** - `{res}`({raw_text2})\n**•Caption** - `{raw_text3}`\n**•Thumbnail** - `{thumb}`")
         for i in range(count - 1, len(links)):
             if len(links[i]) != 2 or not links[i][1]:
                 # If the link is empty or not properly formatted, continue to the next iteration
@@ -201,8 +201,8 @@ async def account_login(bot: Client, m: Message):
                 else:
                     cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
-                cc = f'**[📹]Video_ID : {str(count).zfill(3)}.**\n\n**Video Name :** {name1} ({res}) {CR}.mkv\n\n**Batch Name :** {b_name}\n\n**Downloaded By : {CR}**'
-                cc1 = f'**[📁]File_ID : {str(count).zfill(3)}.**\n\n**File Name :**{name1} {CR}.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By : {CR}**'
+                cc = f'**[ 🎬 ]Video_ID : {str(count).zfill(3)}.**\n\n**Video Name :** {name1} ({res}) .mkv\n\n**Batch Name :** {b_name}\n\n**Downloaded By : {CR}**'
+                cc1 = f'**[📒]File_ID : {str(count).zfill(3)}.**\n\n**File Name :**{name1} .pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By : {CR}**'
                 
                 if "drive" in url:
                     try:
@@ -228,7 +228,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading📥:-**\n\n** Video Name :-** `{name}\n\n╰────⌈**✨❤️ KUNAL ❤️✨**⌋────╯")
+                    prog = await m.reply_text(f"**Downloading📥:-**\n\n** Video Name :-** `{name}\n\n╰────⌈**✨❤️ SHIVAM ❤️✨**⌋────╯")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
